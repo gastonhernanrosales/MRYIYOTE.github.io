@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('hasVisited', 'true');
     }
 
+    const ruleta = document.getElementById("ruleta");
+    const resultado = document.getElementById("resultado");
+    const girarBtn = document.getElementById("girar");
+
     const premios = [
         "NO TE GANASTE NADA",
         "A TUS PAPAS LE PONEMOS CHEDDAR SIN CARGO",
@@ -20,21 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
         "CON TU PEDIDO TE GANASTE OTRO SANDWCH!!!"
     ];
 
-    const ruleta = document.getElementById("ruleta");
-    const resultado = document.getElementById("resultado");
-    const girarBtn = document.getElementById("girar");
-
     // Crear las secciones de la ruleta
     premios.forEach((premio, index) => {
         const slice = document.createElement("div");
         slice.className = "slice";
         slice.style.transform = `rotate(${index * 45}deg)`;
-
-        const content = document.createElement("div");
-        content.textContent = premio;
-        content.style.backgroundColor = `hsl(${index * 45}, 70%, 70%)`;
-        slice.appendChild(content);
-
         ruleta.appendChild(slice);
     });
 

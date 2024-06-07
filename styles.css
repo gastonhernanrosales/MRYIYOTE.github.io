@@ -51,39 +51,16 @@ body {
     font-size: 1.2em;
 }
 
-/* .ruleta::before {
-    content: 'Premio 1';
+.slice {
+    width: 150px;
+    height: 300px;
+    overflow: hidden;
     position: absolute;
-    transform: translateX(-50%);
-    top: 10%;
+    top: 0;
     left: 50%;
-    font-weight: bold;
-} */
-
-/* .ruleta::after {
-    content: 'Premio 5';
-    position: absolute;
-    transform: translateX(-50%);
-    bottom: 10%;
-    left: 50%;
-    font-weight: bold;
-} */
-
-.ruleta div:nth-child(1)::before {
-    content: 'Premio 2';
-    position: absolute;
-    transform: rotate(45deg) translateX(-50%);
-    left: 10%;
-    top: 50%;
-    font-weight: bold;
+    transform-origin: 0% 50%;
 }
 
-.ruleta div:nth-child(2)::before {
-    content: 'Premio 3';
-    position: absolute;
-    transform: rotate(45deg) translateX(-50%);
-    right: 10%;
-    top: 50%;
-    font-weight: bold;
-}
+
+
 
