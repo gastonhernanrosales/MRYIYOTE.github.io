@@ -1,0 +1,90 @@
+body {
+    background-image: url('yiyoye\ mr.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.ruleta {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+        #ff0000 0% 12.5%,
+        #ffff00 12.5% 25%,
+        #00ff00 25% 37.5%,
+        #00ffff 37.5% 50%,
+        #0000ff 50% 62.5%,
+        #ff00ff 62.5% 75%,
+        #ff8800 75% 87.5%,
+        #88ff00 87.5% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* .ruleta::before {
+    content: 'Premio 1';
+    position: absolute;
+    transform: translateX(-50%);
+    top: 10%;
+    left: 50%;
+    font-weight: bold;
+} */
+
+/* .ruleta::after {
+    content: 'Premio 5';
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 10%;
+    left: 50%;
+    font-weight: bold;
+} */
+
+.ruleta div:nth-child(1)::before {
+    content: 'Premio 2';
+    position: absolute;
+    transform: rotate(45deg) translateX(-50%);
+    left: 10%;
+    top: 50%;
+    font-weight: bold;
+}
+
+.ruleta div:nth-child(2)::before {
+    content: 'Premio 3';
+    position: absolute;
+    transform: rotate(45deg) translateX(-50%);
+    right: 10%;
+    top: 50%;
+    font-weight: bold;
+}
+
+
