@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const ruleta = document.getElementById("ruleta");
     const resultado = document.getElementById("resultado");
-    const girarBtn = document.getElementById("girar");
 
     const premios = [
         "NO TE GANASTE NADA",
@@ -29,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
         ruleta.appendChild(slice);
     });
 
-    document.getElementById("girar").addEventListener("touchstart", () => {
+    document.body.addEventListener("touchstart", () => {
         // Deshabilitar el botón para evitar múltiples clics
-        girarBtn.disabled = true;
-
+        document.body.removeEventListener("touchstart");
+        
         const angulo = Math.floor(Math.random() * 360);
         const rotacion = 3600 + angulo; // 10 vueltas + el ángulo aleatorio
 
@@ -51,3 +50,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 4000);
     });
 });
+
+
