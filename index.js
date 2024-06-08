@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const hasVisited = localStorage.getItem('hasVisited');
     if (hasVisited) {
@@ -7,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const ruleta = document.getElementById("ruleta");
-    const resultado = document.getElementById("resultado");
+    const resultadoRecuadro = document.getElementById("resultadoRecuadro");
 
     const premios = [
         "NO TE GANASTE NADA",
@@ -28,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
         ruleta.appendChild(slice);
     });
 
+    const mostrarPremio = (premioSeleccionado) => {
+        // Mostrar el premio en el recuadro
+        resultadoRecuadro.textContent = `¡PREMIO: ${premioSeleccionado} ... TOMALE FOTO CAPTURA RAPIDO!!!!`;
+        resultadoRecuadro.style.display = "block"; // Mostrar el recuadro
+    };
+
     const girarRuleta = () => {
         // Deshabilitar el botón para evitar múltiples clics
         ruleta.removeEventListener("click", girarRuleta);
@@ -41,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             const anguloFinal = (rotacion % 360) / 360 * 8;
             const premioSeleccionado = premios[Math.floor(anguloFinal)];
-            resultado.textContent = `¡PREMIO: ${premioSeleccionado} ... TOMALE FOTO CAPTURA RAPIDO!!!!`;
+            mostrarPremio(premioSeleccionado);
 
             // Cerrar la página después de 10 segundos
             setTimeout(() => {
@@ -55,5 +63,3 @@ document.addEventListener("DOMContentLoaded", function() {
     ruleta.addEventListener("touchstart", girarRuleta);
 
 });
-
-

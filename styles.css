@@ -60,7 +60,14 @@ body {
     left: 50%;
     transform-origin: 0% 50%;
 }
-
+.recuadro {
+    display: none; /* Ocultar el recuadro inicialmente */
+    border: 2px solid black; /* Establecer un borde */
+    padding: 10px; /* Agregar espacio interno */
+    margin-top: 10px; /* Agregar margen superior */
+    background-color: #f0f0f0;
+    color:black
+}
 
 
 
