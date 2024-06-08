@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const hasVisited = localStorage.getItem('hasVisited');
     if (hasVisited) {
-        alert("Ya has utilizado esta página. Cerrando en 2 segundos...");
-        setTimeout(() => {
-            window.close();
-        }, 2000);
+        window.location.href = "https://www.facebook.com/groups/239979266569845"; // Redirige a una página de agradecimiento
     } else {
         localStorage.setItem('hasVisited', 'true');
     }
@@ -32,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ruleta.appendChild(slice);
     });
 
-    document.getElementById("girar").addEventListener("click", () => {
+    document.getElementById("girar").addEventListener("touchstart", () => {
         // Deshabilitar el botón para evitar múltiples clics
         girarBtn.disabled = true;
 
