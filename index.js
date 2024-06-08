@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (lastPlayedDate === today) {
-        window.location.href = "https://www.facebook.com/groups/239979266569845"; // Redirige a una página de agradecimiento
+        window.location.href = "agradecimiento.html"; // Redirige a una página de agradecimiento
         return;
     } else {
         localStorage.setItem('lastPlayedDate', today);
