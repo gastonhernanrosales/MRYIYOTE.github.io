@@ -4,8 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const lastPlayedDate = localStorage.getItem('lastPlayedDate');
     const today = new Date().toISOString().split('T')[0];
 
+    const specialPrize = "CON TU PEDIDO TE GANASTE OTRO SANDWCH!!!";
+    let specialPrizeAwarded = localStorage.getItem('specialPrizeAwarded');
+    if (lastPlayedDate === today && specialPrizeAwarded) {
+        specialPrizeAwarded = JSON.parse(specialPrizeAwarded);
+    } else {
+        specialPrizeAwarded = false;
+        localStorage.setItem('lastPlayedDate', today);
+        localStorage.setItem('specialPrizeAwarded', specialPrizeAwarded);
+    }
+
     if (lastPlayedDate === today) {
-        window.location.href = "agradecimiento.html"; // Redirige a una página de agradecimiento
+        window.location.href = "https://www.facebook.com/groups/239979266569845"; // Redirige a una página de agradecimiento
         return;
     } else {
         localStorage.setItem('lastPlayedDate', today);
