@@ -1,11 +1,14 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const hasVisited = localStorage.getItem('hasVisited');
-    if (hasVisited) {
+    const lastPlayedDate = localStorage.getItem('lastPlayedDate');
+    const today = new Date().toISOString().split('T')[0];
+
+    if (lastPlayedDate === today) {
         window.location.href = "agradecimiento.html"; // Redirige a una página de agradecimiento
+        return;
     } else {
-        localStorage.setItem('hasVisited', 'true');
+        localStorage.setItem('lastPlayedDate', today);
     }
 
     const ruleta = document.getElementById("ruleta");
