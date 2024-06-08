@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
         ruleta.appendChild(slice);
     });
 
-    document.body.addEventListener("touchstart", () => {
+    const girarRuleta = () => {
         // Deshabilitar el botón para evitar múltiples clics
-        document.body.removeEventListener("touchstart");
+        ruleta.removeEventListener("click", girarRuleta);
         
         const angulo = Math.floor(Math.random() * 360);
         const rotacion = 3600 + angulo; // 10 vueltas + el ángulo aleatorio
@@ -48,7 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 window.close();
             }, 5000);
         }, 4000);
-    });
+    };
+
+    // Agregar eventos para dispositivos móviles y computadoras
+    ruleta.addEventListener("click", girarRuleta);
+    ruleta.addEventListener("touchstart", girarRuleta);
+
 });
 
 
