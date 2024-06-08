@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const hasVisited = localStorage.getItem('hasVisited');
     if (hasVisited) {
-        window.location.href = "https://www.facebook.com/groups/239979266569845"; // Redirige a una página de agradecimiento
+        window.location.href = "agradecimiento.html"; // Redirige a una página de agradecimiento
     } else {
         localStorage.setItem('hasVisited', 'true');
     }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Cerrar la página después de 10 segundos
             setTimeout(() => {
                 window.close();
-            }, 5000);
+            }, 20000);
         }, 4000);
     };
 
