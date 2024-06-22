@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const lastPlayedDate = localStorage.getItem('lastPlayedDate');
     const today = new Date().toISOString().split('T')[0];
 
-    const specialPrize = "CON TU PEDIDO TE GANASTE OTRO SANDWCH!!!";
+    const specialPrize = "NO TE GANASTE NADA";
     let specialPrizeAwarded = localStorage.getItem('specialPrizeAwarded');
     if (lastPlayedDate === today && specialPrizeAwarded) {
         specialPrizeAwarded = JSON.parse(specialPrizeAwarded);
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
         "A TUS PAPAS LE PONEMOS CHEDDAR SIN CARGO",
         "EXTRA DE PAPAS",
         "NO TE GANASTE NADA",
-        "JUGO VIDA DE 1,5",
+        "TE GANASTE UN AGUA SABORIZADA DE 500 ML",
         "NO TE GANASTE NADA",
-        "COCA DE 500 ML",
-        "CON TU PEDIDO TE GANASTE OTRO SANDWCH!!!"
+        "NO TE GANASTE NADA",
+        "TE GANASTE UN AGUA SABORIZADA DE 500 ML"
     ];
 
     // Crear las secciones de la ruleta
